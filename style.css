@@ -1,0 +1,164 @@
+
+/* Apply a basic styling to the header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #003554;
+    color: white;
+    z-index: 1000; /* Ensure the header appears above other elements */
+  }
+  
+  /* Style the title in the header */
+  header h2 {
+    margin: 0;
+  }
+  
+  /* Style the navigation bar in the header */
+  nav {
+    display: flex;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  /* Style the main container */
+  .admin-container {
+    display: flex;
+    /* height: 100vh; */
+  }
+  
+  /* Style the sidebar */
+  .sidebar-container {
+    max-width: 250px;
+    background-color: #051923;
+    color: white;
+    padding: 20px;
+    margin-top: 70px; /* Adjust margin to accommodate fixed header */
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .sidebar-container p {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-container li {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+  
+  .sidebar-container a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Style the content container */
+  .content-container {
+    padding: 20px;
+    margin-left: 220px;
+    margin-top: 100px;
+    box-sizing: border-box;
+    display: block;
+    flex-direction: column;
+}
+  
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+table thead tr th{
+    height: 60px;
+    background: #051923;
+}
+
+.table100-head th {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style the button */
+  button {
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+.column1 {
+    padding-left: 40px;
+}
+/* .Calendar {
+  position: relative;
+  height: 100vh;
+} */
+.calendar-h3 {
+  margin-top: 90px;
+  margin-left: 200px;
+
+}
+.calendar-h6 {
+  margin-left: 200px;
+}
+
+.textfield-title {
+  font-size:13px;
+  color:#555;
+  outline: none;
+  border:1px solid #bbb;
+  padding:10px 20px;
+  border-radius: 12px;
+  margin-left: 200px;
+}
+.textfield-startDate {
+  font-size:13px;
+  color:#555;
+  outline: none;
+  border:1px solid #bbb;
+  padding:10px 20px;
+  border-radius:12px;
+  margin-left: 10px;
+}
+.textfield-endDate {
+  font-size:13px;
+  color:#555;
+  outline: none;
+  border:1px solid #bbb;
+  padding:10px 20px;
+  border-radius:12px;
+  margin-left: 10px;
+}
