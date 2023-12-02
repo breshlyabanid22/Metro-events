@@ -33,20 +33,19 @@ header {
   /* Style the main container */
   .admin-container {
     display: flex;
-    /* height: 100vh; */
   }
-  
+
   /* Style the sidebar */
   .sidebar-container {
-    max-width: 250px;
+    max-width: 15%;
     background-color: #051923;
     color: white;
     padding: 20px;
     margin-top: 70px; /* Adjust margin to accommodate fixed header */
     display: block;
+    float: left;
+    height: 1150px;
     position: fixed;
-    top: 0;
-    bottom: 0;
   }
   
   .sidebar-container p {
@@ -117,24 +116,28 @@ th, td {
   button {
     padding: 5px 10px;
     cursor: pointer;
-
+    
 }
 .column1 {
     padding-left: 40px;
 }
-/* .Calendar {
-  position: relative;
-  height: 100vh;
-} */
-.calendar-h3 {
-  margin-top: 90px;
-  margin-left: 200px;
-
+.textfield-container {
+  display: flex;
 }
-.calendar-h6 {
+.calendar-div {
+  /* width: 85%;
+  float:left; */
+  margin-top: 80px;
   margin-left: 200px;
 }
+.calendar-header{
+  width: 100%;
 
+}
+.Calendar-content {
+  height: 900px;
+  margin: 50px;
+}
 .textfield-title {
   font-size:13px;
   color:#555;
@@ -142,7 +145,6 @@ th, td {
   border:1px solid #bbb;
   padding:10px 20px;
   border-radius: 12px;
-  margin-left: 200px;
 }
 .textfield-startDate {
   font-size:13px;
@@ -161,4 +163,59 @@ th, td {
   padding:10px 20px;
   border-radius:12px;
   margin-left: 10px;
+}
+.react-datepicker-popper {
+  z-index: 100 !important;
+}
+
+/* CSS */
+.btn-add-event {
+  background-color: #3174AD;
+  border-radius: 8px;
+  border-style: none;
+  margin-left: 10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  /* line-height: 20px; */
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  /* position: relative; */
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-add-event:hover {
+  background-color: #62ace5;
+  border: 2px;
+}
+.btn-add-event:focus {
+  background-color: #24619e;
+}
+.event-booking-div {
+  margin-top: 80px;
+  margin-left: 200px;
+  
+}
+.form-card {
+  padding: 20px;
+}
+.form {
+  width:400px;
+  background-color: #d8d8d8;
+  padding: 20px;
+  border-radius: 4px;
+} 
+.form-group input{
+  padding: 5px;
 }

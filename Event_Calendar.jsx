@@ -9,6 +9,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import enUSLocale from 'date-fns/locale/en-US';
 import "react-datepicker/dist/react-datepicker.css"
+import axios from 'axios'
 
 const locales = {
   "en-US": enUSLocale
@@ -47,27 +48,48 @@ const Event_Calendar = () => {
 
   function handleAddEvent() {
     setAllEvents([...allEvents, newEvent])
+
+    const formattedStartDate = newEvent.start.toISOString().split('T')[0];
+    const formattedEndDate = newEvent.end.toISOString().split('T')[0];
+    
+   axios.post('http://localhost:8081/api/addEvent', {
+      title: newEvent.title,
+      start: formattedStartDate,
+      end: formattedEndDate,
+    })
+    .then((response) => {
+      // Handle success response from the server
+      console.log(response.data);
+    })
+    .catch((error) => {
+      // Handle error response from the server
+      console.error('Error:', error);
+    });
   }
   return (
     <>
+      <div className='calendar-div'>
         <div className='calendar-header'>
-          <h3 className='calendar-h3'>Events Calendar</h3>
-          <h6 className='calendar-h6'>ADD NEW EVENT</h6>
-          <div>
-            <input type="text" placeholder='Title' className='textfield-title'
-            value={newEvent.title} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})} required/>
-            <DatePicker placeholderText='Start Date' className='textfield-startDate'
-              selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})}/>
-            <DatePicker placeholderText='End Date' className='textfield-endDate'
-              selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})}/>
-            <button style={{marginTop: "10px"}} onClick={handleAddEvent}>ADD EVENT</button>
+            <h3>Events Calendar</h3>
+            <h6>ADD NEW EVENT</h6>
+        </div>
+            <div className='textfield-container'>
+              <input type="text" placeholder='Title' className='textfield-title'
+              value={newEvent.title} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})} required/>
+              <DatePicker placeholderText='Start Date' className='textfield-startDate'
+                selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})}/>
+              <DatePicker placeholderText='End Date' className='textfield-endDate'
+                selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})}/>
+              <button className='btn-add-event' onClick={handleAddEvent}>ADD EVENT</button>
+            </div>
+
+          <div className='Calendar-content'>
+            <Calendar localizer={localizer} events={allEvents}
+            startAccessor="start" endAccessor="end" 
+            />
           </div>
-        </div>
-        <div className='Calendar'>
-          <Calendar localizer={localizer} events={allEvents}
-           startAccessor="start" endAccessor="end" 
-           style={{height: "100vh", margin: "50px", marginLeft: "200px"}}/>
-        </div>
+      </div>
+
     </>
     
   )

@@ -15,25 +15,25 @@ const Login = () => {
         setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setErrors(Validation(values));
-        if(errors.email === "" && errors.password === ""){
-            axios.post('http://localhost:8081/login', values)
-            .then(res => {
-                console.log(res.data)
-                if(res.data === "admin_access"){
-                   navigate('/admin/user-details');   
-                }else if(res.data === "Success"){
-                    navigate('/user');
-                    
-                }else{
-                    alert("Account does not exist!");
-                }
-            })
-            .catch(err => console.log(err));
-        }
-        
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            setErrors(Validation(values));
+            if(errors.email === "" && errors.password === ""){
+                axios.post('http://localhost:8081/login', values)
+                .then(res => {
+                    console.log(res.data)
+                    if(res.data.userType === "admin_access"){
+                    navigate('/admin/user-details');   
+                    }else if(res.data.userType === "user"){
+                        navigate('/user');
+                        
+                    }else{
+                        alert("Account does not exist!");
+                    }
+                })
+                .catch(err => console.log(err));
+            }
+            
     }
   return (
     <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>

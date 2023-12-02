@@ -16,7 +16,7 @@ const Admin = () => {
             <Link to="/login"><h6>Log out</h6></Link>
           </nav>
         </header>
-
+      </div>
         <div className="sidebar-container">
             <p>MAIN NAVIGATION</p>
             <ul>
@@ -24,8 +24,8 @@ const Admin = () => {
               <li><Link to="events-booking">Event Booking</Link></li>
               <li><Link to="user-details">User Details</Link></li>
             </ul>
-          </div>
-      </div>
+        </div>
+      
       <Outlet/>
     </> 
     
