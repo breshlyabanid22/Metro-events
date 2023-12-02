@@ -30,8 +30,8 @@ const User_Details = () => {
         <table>
           <thead>
             <tr className='table100-head'>
-              <th className='column1'>User ID</th>  
-              <th>User Name</th>
+              <th className='column1'>ID</th>  
+              <th>Name</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -41,7 +41,7 @@ const User_Details = () => {
                 <td className='column1'>{user.id}</td>
                 <td>{user.name}</td>
                 <td>
-                  <button onClick={() => acceptRequest(user.id)}>
+                  <button className='btn-add-event' onClick={() => acceptRequest(user.id)}>
                     Accept Request
                   </button>
                 </td>
