@@ -2,10 +2,10 @@
 
 NOTE: Dont forget to import necessary dependencise
 
-	-npm i axios	//!important
-    -npm i mysql express //!important
-    -npm i cors //!important
-	-npm install --save react-big-calendar //!important 
+	-npm i axios	
+    -npm i mysql express 
+    -npm i cors 
+	-npm install --save react-big-calendar  
     -npm install multer
 	-npm install react-datepicker --save
     
