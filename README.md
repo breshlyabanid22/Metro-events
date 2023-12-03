@@ -1,6 +1,6 @@
 # Metro-events
 
-NOTE: Dont forget to import necessary dependencise
+NOTE: Dont forget to import necessary dependencies
 
 	-npm i axios	
     -npm i mysql express 
