@@ -8,6 +8,7 @@ NOTE: Dont forget to import necessary dependencies
     -npm install multer
     -npm install date-fns --save
 	-npm install react-datepicker --save
+ -npm install react-bootstrap bootstrap
  
     
     
